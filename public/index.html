@@ -1,0 +1,67 @@
+<html>
+  <head>
+    <script src="http://ajax.googleapis.com/ajax/libs/prototype/1.7.0.0/prototype.js" type="text/javascript" charset="utf-8"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/scriptaculous/1.8.3/scriptaculous.js" type="text/javascript" charset="utf-8"></script>
+    <script src="instant-completer.js" type="text/javascript" charset="utf-8"></script>
+    
+    <script type="text/javascript" charset="utf-8">
+      document.observe("dom:loaded", function() {
+        new Ajax.Autocompleter.Instant("autocomplete", "autocomplete_choices", "/search", {
+          method:     "GET",
+          paramName:  "query",
+          minChars:   1
+        });
+      });
+    </script>
+    
+    <style type="text/css" media="screen">
+      body {
+        font-family:      Helvetica;
+        font-size:        20pt;
+        text-align:       center;
+        margin:           0;
+        padding:          0;
+        padding-top:      1em;
+      }
+      
+      #autocomplete {
+        font-size:        16pt;
+        width:            750px;
+      }
+      
+      p {
+        font-size:        0.75em;
+      }
+
+      #autocomplete_choices {
+        font-size:        12pt;
+        text-align:       left;
+        border:           1px solid #999;
+        height:           200px;
+        overflow:         auto;
+      }
+      
+      #autocomplete_choices ul {
+        margin:           0;
+        padding:          0;
+      }
+      
+      #autocomplete_choices li {
+        display:          block;
+        list-style-type:  none;
+        margin:           0;
+        padding:          2px;
+      }
+    </style>
+  </head>
+    
+  <body>
+    <h1>instant-completer showoff</h1>
+    
+    <p>Find words stored in <code>/usr/share/dict/words</code> by prefix:</p>
+    
+    <input type="text" id="autocomplete">
+    <div id="autocomplete_choices"></div>
+  </body>
+
+</html>

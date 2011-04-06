@@ -1,0 +1,6 @@
+My "instant-completer" hack for Scriptaculous that continously
+feeds autocompleter updates to the server without sending
+overlapping requests to get an "instant search" effect.
+
+A little Sinatra application that allows searching of the local
+dictionary file (/usr/share/dict/words) for demo purposes.
